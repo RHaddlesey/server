@@ -19,3 +19,5 @@ tell Heroku how to start our server - package.json
 
 create .gitignore (or edit)
 node_modules
+
+git push heroku master - deploy latest build
