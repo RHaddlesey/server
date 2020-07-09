@@ -1,5 +1,7 @@
 node index.js to start the server
 
+USE npm run dev = if on localhost as a dev
+
 
 const express = require("express");
 const app = express();

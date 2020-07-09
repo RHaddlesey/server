@@ -1,7 +1,7 @@
-const express = require('express');
-const passport = require('passport');
-const GoogleStrategy = require('passport-google-oauth20').Strategy;
-const keys = require('./config/keys');
+const express = require("express");
+const passport = require("passport");
+const GoogleStrategy = require("passport-google-oauth20").Strategy;
+const keys = require("./config/keys");
 
 const app = express();
 
@@ -12,18 +12,23 @@ passport.use(
       clientSecret: keys.googleClientSecret,
       callbackURL: "/auth/google/callback",
     },
-    (accessToken) => {
-      console.log("token", accessToken, keys.googleClientID);
+    (accessToken, refreshToken, profile) => {
+      console.log("token", accessToken);
+      console.log("refresh token", refreshToken);
+      console.log("profile details", profile);
     }
   )
 );
 
+// route handlers
 app.get(
   "/auth/google",
   passport.authenticate("google", {
-    scope: ["profile", "email"]
+    scope: ["profile", "email"],
   })
 );
+
+app.get("/auth/google/callback", passport.authenticate("google"));
 
 const PORT = process.env.PORT || 5000;
 // if on Heroku, find and use their port || or in dev use 5000
