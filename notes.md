@@ -27,3 +27,6 @@ res = response
 res.send sends the JSON as a plain JavaScript object ({}). This closes the response and returns the object. It is an arrow function.
 
 app.listen(5000) this is node.js listening to anything on that port.
+
+
+
