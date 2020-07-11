@@ -6,6 +6,17 @@ const keys = require("../config/keys");
 const User = mongoose.model("users");
 // this is the model class for the DB
 
+passport.serializeUser((user, done) => {
+  done(null, user.id);
+});
+// done is a passport callback - null is the error msge.
+
+passport.deserializeUser((id, done) => {
+  User.findById(id).then((user) => {
+    done(null, user);
+  });
+});
+
 passport.use(
   new GoogleStrategy(
     {

@@ -10,6 +10,16 @@ module.exports = (app) => {
   );
 
   app.get("/auth/google/callback", passport.authenticate("google"));
+
+  app.get("/api/logout", (req, res) => {
+    req.logout();
+    res.send(req.user);
+  });
+
+  app.get("/api/current_user", (req, res) => {
+    res.send(req.user);
+  });
 };
 
 // module.exports is so we can use these handlers on the app defined in index.js
+// req-uest res-ponse
