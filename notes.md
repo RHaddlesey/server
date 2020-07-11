@@ -28,5 +28,6 @@ res.send sends the JSON as a plain JavaScript object ({}). This closes the respo
 
 app.listen(5000) this is node.js listening to anything on that port.
 
+COOKIE SESSION WITH EXPRESS
 
 

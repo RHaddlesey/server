@@ -35,3 +35,6 @@ app.listen(PORT);
 
 // this is a node specific import. It uses common JavaScript rather than es2015+ which would be the more familiar
 // import express from express
+
+// app.use hooks us up to middleware to modify incoming requests to our app before they are sent off to the route handlers. - request comes in - cookie is made and used - passport pulls the cookie data - deseralise the user.id into a user - a model instance is added to req object - request sent to route handler
+// this makes sure the middleware is added to the route handler
