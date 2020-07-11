@@ -1,6 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const keys = require("./config/keys");
+// I had to switch the order of load bellow to stop errors because we needed the model to load before the passport file calls it
+require("./models/User");
 require("./services/passport");
 // const authRoutes = require("./routes/authRoutes")
 
