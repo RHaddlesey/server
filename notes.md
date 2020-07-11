@@ -30,4 +30,4 @@ app.listen(5000) this is node.js listening to anything on that port.
 
 COOKIE SESSION WITH EXPRESS
 
-
+2 servers! react is npm start in the client folder and the server is npm run dev - but we want them to work together with just one command. So we will use concurrently
